@@ -1,0 +1,139 @@
+/* 
+A flexbox is split into 2 main parts: the container, and the items.
+The container is the parent element in which the displat type is active usually in the form of a div.
+Flex items are child elements of the container, and make up the contents of the box.
+a flexbox always has a direction,
+our main axis always goes from left to right,
+we can flip the direction though using flex direction,
+justify content aligns items in the container,
+takes different values,
+
+
+
+*/
+html, body {
+	height: 100%;
+	box-sizing: border-box;
+	background-color: #ffeead;
+}
+/* 
+.container {
+  border: 25px solid #ffcc5c;
+  display: flex; /*distributes items from left to right /*/
+  /* flex-direction: row; /* leaves it like it is* */
+  /* flex-direction: column; /*arranges the items from top to bottom* */
+  /* justify-content: space-around; */
+  /* justify-content: flex-end; */
+  /* height: 100%; */
+  /* aligns them to the center of the page /*/
+  /* align-items: center; */
+/* } */ 
+
+/* .logout {
+	margin-left: auto;  /* pushes the logout item all the way to the right /*/
+/* } */
+/*
+
+/* if we want both the search and logout to move all the way to the right,
+   we can target the search item and since its before the logout
+   it'll push them both /*/
+
+/* .search {
+	margin-left: auto;
+} */
+
+/* alternatively we can set the justify content in the container to flex-end and then set the margin-right of home to auto /*/
+
+/* .home {
+	margin-right: auto;
+} */
+
+/*
+.container > div {
+  flex: 1; /* even if we add items to the container, using flex allocates space and makes them responsive /*/
+
+/* } */
+
+/* we can also target an item and make it twice as bigger as the others, do it this way to make it more specific /*/
+/* .container > .search {
+	flex: 2;
+} */
+
+/* however the most common use cases is having one item do all the flexing while the others stay on fixed position */
+
+/* here we'll have search doing the flex /*/
+
+/* .search {
+	flex: 1;
+} */
+
+/* we can also have it fixed and have the other 2 do the flex /*/
+
+/* .home, .logout {
+	flex: 1;
+} */
+
+/** flex direction changes hwo the items are stacked /*/
+
+/* .container {
+	border: 5px solid #ffcc5c;
+	display: flex;
+	flex-direction: column;
+	/**justify content takes place before align items, 
+	so you can justify to the center and then align flex-end or flex start depending on where you want the container to be */
+	/* justify-content: flex-end; */
+	/* height: 100%;
+	align-items: flex-end;
+} */ 
+
+/* flex-wrap has a wrap set to no wrap by default meaning you can only have one column,
+however you can set it up to wrap so you can have two columns
+/*/
+
+/* .container {
+	border: 5px solid #ffcc5c;
+	display: flex;
+	flex-wrap: wrap;
+
+} */
+/* .container > div {
+	width: 600px;
+} */
+
+/* flex is shorthand for flex-grow, flex-shrink and flex-basis */
+.container {
+	border: 5px solid #ffcc5c;
+	display: flex;
+
+}
+.home {
+	/* flex : 1 1 0; */
+	/** its the same as writing 
+
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+*/
+}
+
+/**flex basis is a way of setting the base width of an element */
+
+/* .logout {
+	flex-basis: 200px;
+
+}
+.search {
+	flex-basis: 200px;
+} */
+
+/** flex-grow decides how much extra space should be distibuted to each of the item as the container grows */
+
+.home {
+	flex-grow: 1;
+	flex-basis: 200px;
+}
+.logout {
+	flex-grow: 5;
+	flex-basis: 200px;
+
+}
